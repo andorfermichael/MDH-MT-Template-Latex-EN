@@ -1,0 +1,376 @@
+% ========== Template by IC\M/T Institute of Creative\Media/Technologies =============
+% ==========  M. Wagner and K. Blumenstein, 2016         ============= 
+% ==========  Based on the LaTeX Thesis Template for the University of Applied Sciences St.Pölten by P. Lechner https://github.com/hrtlacek/ThesisTemplate-FH-StP        ============= 
+
+% - modifications by M. Andorfer 2020/03/01
+%   - fixed font:
+%       - added missing font declaration file for arial
+%       - fixed commands order so that the font is actually applied correctly
+%   - fixed bibliography: 
+%       - removed outdated package natbib and replaced it with package       %          biblatex to allow easy changes between citation styles
+%   - adapted title page:
+%       - replaced German MT logo with neutral FH logo
+%       - replaced cyan with black color
+%       - improved wording (equal word template)
+%   - adapted page layout:
+%       - changed margins (equal word template)
+%       - implemented twoside layout
+%           - adaptive margins (added bindingmargin
+%           - adaptive headers (chapter title)
+%           - adaptive footers (page number)
+%   - added abbreviations:
+%       - added abbreviations list and examples
+%   - added pdf appendix:
+%       - added example of including pdf files directly into the appendix
+
+
+%Dokumentklasse without end dot ;-)
+\documentclass[a4paper,11pt, numbers=noenddot, twoside]{scrreprt}
+% \usepackage[outer = 3cm, inner = 3cm, bottom = 3.5 cm, top = 3 cm]{geometry}
+% \geometry{bindingoffset=1cm}
+\usepackage[left = 3cm, right = 3cm, top = 3 cm, bottom = 3.5 cm]{geometry}
+\geometry{bindingoffset=1cm}
+\usepackage[onehalfspacing]{setspace}
+
+% ============= Settings for the Work =============
+
+\include{Settings}
+
+% ============= Packages =============
+
+% Dokumentinformationen
+\usepackage[
+	pdftitle={\workTitle},
+	pdfsubject={},
+	pdfauthor={\studentFirstName \studentLastName},
+	pdfkeywords={}
+	pdftex=true, 
+	colorlinks=true,
+ 	breaklinks=true,
+	citecolor=black,
+	linkcolor=black,	
+	menucolor=black,	
+	urlcolor=black
+]{hyperref}
+
+\hypersetup{
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={My title},    % title
+    pdfauthor={Author},     % author
+    pdfsubject={Subject},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=false,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=black,        % color of links to bibliography
+    filecolor=black,      % color of file links
+    urlcolor=black           % color of external links
+}
+
+% Standard Packages
+\usepackage[utf8]{inputenc}
+
+% Switch the Language
+\ifuseGermanVersion
+	\usepackage[ngerman]{babel}	% German
+\else
+	\usepackage[english]{babel} % English
+\fi
+
+\usepackage[T1]{fontenc}
+% Set arial font
+\usepackage[scaled]{Fonts/uarial}
+\renewcommand*{\familydefault}{\sfdefault}
+
+\usepackage{graphicx}
+\usepackage{graphicx, subfigure}
+%setze pfad fuer Bilder
+\graphicspath{{img/}}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{transparent}
+
+\usepackage{pdfpages}
+
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+\usepackage[export]{adjustbox}
+
+% BlockDiagram Drawing Package
+% ---tikz
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.10}
+\usepackage{textcomp}
+
+%Package for using the [H] option on graphics to force them into place
+\usepackage{float}
+
+%iPython packages:
+\usepackage{graphicx} % Used to insert images
+\usepackage{adjustbox} % Used to constrain images to a maximum size 
+\usepackage{color} % Allow colors to be defined
+\usepackage{enumerate} % Needed for markdown enumerations to work
+% \usepackage{geometry} % Used to adjust the document margins
+\usepackage{amsmath} % Equations
+\usepackage{amssymb} % Equations
+\usepackage[T1]{fontenc}
+% \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+% \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+\usepackage{fancyvrb} % verbatim replacement that allows latex
+\usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+\usepackage{hyperref}
+\usepackage{longtable} % longtable support required by pandoc >1.10
+\usepackage[printonlyused]{acronym}
+\usepackage{abbrevs}
+%% the following solves a bug in the abbrevs package, that adds an empty
+%% space after the abbrev
+\makeatletter
+\renewcommand\maybe@space@{%
+  % \@tempswatrue % <= this is in the original
+  \maybe@ictrue % <= this is new
+  \expandafter   \@tfor
+    \expandafter \reserved@a
+    \expandafter :%
+    \expandafter =%
+                 \nospacelist
+                 \do \t@st@ic
+  % \if@tempswa % <= this is in the original
+  \ifmaybe@ic % <= this is new
+    \space
+  \fi
+}
+\makeatother
+%%
+\renewcommand*\aclabelfont[1]{\textbf{\acsfont{#1}}}
+
+% embedding of audio/video files etc.
+% \usepackage{attachfile}
+% \usepackage{movie15}
+% \usepackage{media9}
+% \usepackage{menukeys}
+
+\usepackage[labelfont=it, labelsep=period, format=plain,justification=raggedright, singlelinecheck=false]{caption}
+\captionsetup[figure]{justification=centering}
+\definecolor{light-gray}{gray}{0.85}
+
+% Switch between German and English based on the Settingx.tex. file
+\usepackage{ifthen}
+
+%\captionsetup[listing]{
+%  labelsep = newline,
+%  textfont = sc, 
+%  name = LISTING, 
+%  justification=justified,
+%  singlelinecheck=false,%%%%%%% a single line is centered by default
+%  labelsep=colon,%%%%%%
+%  skip = \medskipamount}
+
+% =============== BlockDiagram Drawing Config
+\usetikzlibrary{shapes,arrows}
+
+% Definition of blocks:
+\tikzset{%
+  block/.style    = {draw, thick, rectangle, minimum height = 3em,
+    minimum width = 3em},
+  sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+  input/.style    = {coordinate}, % Input
+  output/.style   = {coordinate}, % Output
+  mult/.style	  = {draw, isosceles triangle, minimum height=1cm, minimum width =1cm}
+}
+%mult/.style	  = {isosceles triangle, sharp corners, anchor=center, xshift=-4mm, minimum height=1.5cm, minimum width =0.05cm}
+%isosceles triangle, fill=gray!25, minimum width=1.5cm
+
+% Defining string as labels of certain blocks.
+\newcommand{\suma}{\Large$+$}
+\newcommand{\inte}{$\displaystyle \int$}
+\newcommand{\derv}{\huge$\frac{d}{dt}$}
+\newcommand{\conv}{\huge$\ast$}
+
+% ============================================
+
+% -- Settings für Code abbildungen
+\usepackage{listings,lstautogobble}
+\lstset{backgroundcolor=\color{light-gray},frame=single, framerule=0pt, showspaces=false, showtabs=false, numbers=left, numbersep=5pt, breaklines=false, autogobble=true, language=C++}
+
+% FH-grünBlau
+% \definecolor{FH}{rgb}{0.10, 0.57, 0.68}
+% % FH-grünBlau 2
+% \definecolor{FH2}{rgb}{0.0392, 0.666, 0.549}
+
+% Citation style
+\usepackage{csquotes}
+% Use "apa" or "ieee"
+
+% ieee
+\usepackage[style=ieee, backend=biber, urldate=comp]{biblatex}
+\bibliography{Bibliography.bib}
+
+% apa
+% \usepackage[style=apa,backend=biber,language=english]{biblatex}
+% \DeclareLanguageMapping{english}{english-apa}
+% \addbibresource{Bibliography.bib}
+
+% nicht einrücken nach Absatz
+\setlength{\parindent}{0pt}
+
+% ============= Kopf- und Fußzeile =============
+
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0pt}
+
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter~ #1}{}}
+
+\fancypagestyle{icmt-fancy}{%
+  \fancyhead{} % clear all header fields
+  \fancyhead[RE, LO]{\leftmark}
+  \fancyfoot{} % clear all footer fields
+  \fancyfoot[RE, LO]{\thepage}% Custom footer
+  \renewcommand{\headrulewidth}{0.4pt}% Line at the header visible
+  \renewcommand{\footrulewidth}{0.0pt}% Line at the footer visible
+}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhead{} % clear all header fields
+  \fancyfoot{} % clear all footer fields
+  \fancyfoot[RE, LO]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0.0pt}% Line at the footer visible
+}
+
+% ============= Package Einstellungen & Sonstiges ============= 
+
+%Besondere Trennungen
+\hyphenation{De-zi-mal-tren-nung St-rei-fen-licht-scan-nern}
+
+%römische Aufzählungen mit \RM{Zahl}
+\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
+
+% ============= Dokumentbeginn =============
+
+\begin{document}
+
+% Select the right main page ;-)
+\ifuseGermanVersion
+	\include{TemplateElements/TitelPage_de}
+\else
+	\include{TemplateElements/TitelPage_en}
+\fi
+
+% \part im Inhaltsverzeichnis nicht nummerieren
+\makeatletter
+\let\partbackup\l@part
+\renewcommand*\l@part[2]{\partbackup{#1}{}}
+
+%Seitennummerierung neu beginnen, Zahlen [arabic], röm.Zahlen [roman,Roman], Buchstaben [alph,Alph]
+\pagenumbering{Roman}
+
+\newpage
+\ifuseGermanVersion
+	\include{TemplateElements/a_Erklaerung}
+\else
+	\include{TemplateElements/a_Declaration}
+\fi
+
+\newpage
+\include{Chapters/b_Abstract}
+\include{Chapters/b_Kurzfassung}
+
+\newpage
+
+%Inhaltsverzeichnis
+\tableofcontents
+
+\newpage
+%Seitennummerierung neu beginnen, Zahlen [arabic], röm.Zahlen [roman,Roman], Buchstaben [alph,Alph]
+\pagenumbering{arabic}
+
+% pagestyle für gesamtes Dokument aktivieren
+\pagestyle{icmt-fancy}
+\newpage
+
+% /*================================
+% =            EXAMPLE            =
+% ================================*/
+
+% Delete this include at the end
+\include{Example}
+
+% /*================================
+% =            CONTENTS            =
+% ================================*/
+
+\include{Chapters/01_Introduction}
+\include{Chapters/02_Method}
+\include{Chapters/03_Results}
+\include{Chapters/04_Discussion}
+\include{Chapters/05_Conclusion}
+
+\pagestyle{plain} 
+
+%Literaturverzeichnis
+\printbibliography
+
+% List of Abbreviations
+\newpage
+\include{Chapters/Abbreviations}
+
+% Bilderverzeichnis
+\newpage
+\listoffigures
+
+% Tableverzeichnis
+\newpage
+\listoftables
+
+%Codelistingsverzeichnis
+\newpage
+\lstlistoflistings
+
+% ============================================
+
+\newpage
+\include{Chapters/Appendix}
+
+
+% ============================================
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

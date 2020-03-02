@@ -1,0 +1,100 @@
+
+% setup page dimensions for titlepage
+\newgeometry{left=2.4cm,right=2.4cm,bottom=2.5cm,top=2cm}
+
+% force baselineskip and parindent
+%\newlength{\tmpbaselineskip}
+%\setlength{\tmpbaselineskip}{\baselineskip}
+%\setlength{\baselineskip}{13.6pt}
+%\newlength{\tmpparindent}
+%\setlength{\tmpparindent}{\parindent}
+%\setlength{\parindent}{17pt}
+
+% first titlepage
+\pagestyle{empty}
+
+\begin{figure}[H]
+\vspace*{-2.5cm}
+\hspace*{2.5cm}
+\includegraphics[keepaspectratio, width=1.4\textwidth, right]{TemplateElements/fh-logo.jpg}
+\end{figure}
+
+
+
+\begin{center}
+
+\vspace{1cm}
+
+\begin{minipage}[t][5cm][s]{\textwidth}%
+\centering
+\Huge{{{\fontsize{24}{30} \selectfont \workTitle\\}}}
+\vspace{0.5cm}
+\LARGE{{{\fontsize{16}{24} \selectfont \subTitle\\}}}
+\end{minipage}
+
+\vspace{1cm}
+
+
+\ifuseDigitalMediaTechnologies
+	\LARGE{Diplomarbeit}
+\else
+	\ifuseDigitalHealthCare
+		\LARGE{Masterarbeit}
+    \else
+        YOU HAVE TO CHOOSE THE PROGRAM TYPE IN THE SETTINGS!!!
+  	\fi
+\fi
+
+
+\vspace{1.5cm}
+
+\fontsize{11pt}{15pt}\selectfont Ausgef\"uhrt zum Zweck der Erlangung des akademischen Grades\\
+\ifuseDigitalMediaTechnologies
+	\textbf{Dipl.-ing.f\"ur technisch-wissenschaftliche Berufe}
+\else
+	\ifuseDigitalHealthCare
+		\textbf{Master of Science in Engineering (MSc)}
+    \else
+        YOU HAVE TO CHOOSE THE PROGRAM TYPE IN THE SETTINGS!!!
+  	\fi
+\fi
+
+
+\vspace{6mm}
+
+\ifuseDigitalMediaTechnologies
+	am Masterstudiengang Digitale Medientechnologien an der\\ 
+Fachhochschule St. P\"olten, \textbf{Vertiefungsrichtung \specialization} 
+\else
+	\ifuseDigitalHealthCare
+		am Masterstudiengang Digital Healthcare\\ 
+an der Fachhochschule St. P\"olten
+    \else
+        YOU HAVE TO CHOOSE THE PROGRAM TYPE IN THE SETTINGS!!!
+  	\fi
+\fi
+
+\vspace{1.5cm}
+
+Ausgef\"uhrt von:\\ 
+\fontsize{15pt}{15pt}\selectfont
+\textbf{\studentFirstName\ \studentLastName} \\
+\fontsize{11pt}{15pt}\selectfont
+\studentId
+
+\vspace{2cm}
+
+\begin{tabular}{lll}
+Betreuer and Erstbegutachter: & \advisorPreTitle\ \advisoFirstName\ \advisorLastName, \advisorPosTitle\\
+Zweitbegutachter: & \assessorPreTitle\ \assessorFirstName\ \assessorLastName, \assessorPosTitle\\
+\end{tabular}
+
+\vspace{2cm}
+
+
+\large{\place, \dateDay.\dateMonth.\dateYear}
+
+
+\end{center}
+
+\restoregeometry
