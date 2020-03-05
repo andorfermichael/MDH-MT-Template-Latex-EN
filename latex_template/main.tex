@@ -7,7 +7,7 @@
 %       - added missing font declaration file for arial
 %       - fixed commands order so that the font is actually applied correctly
 %   - fixed bibliography: 
-%       - removed outdated package natbib and replaced it with package       %          biblatex to allow easy changes between citation styles
+%       - removed outdated package natbib and replaced it with package biblatex to allow easy changes .           between citation styles
 %   - adapted title page:
 %       - replaced German MT logo with neutral FH logo
 %       - replaced cyan with black color
@@ -26,8 +26,6 @@
 
 %Dokumentklasse without end dot ;-)
 \documentclass[a4paper,11pt, numbers=noenddot, twoside]{scrreprt}
-% \usepackage[outer = 3cm, inner = 3cm, bottom = 3.5 cm, top = 3 cm]{geometry}
-% \geometry{bindingoffset=1cm}
 \usepackage[left = 3cm, right = 3cm, top = 3 cm, bottom = 3.5 cm]{geometry}
 \geometry{bindingoffset=1cm}
 \usepackage[onehalfspacing]{setspace}
@@ -276,6 +274,16 @@
 \makeatletter
 \let\partbackup\l@part
 \renewcommand*\l@part[2]{\partbackup{#1}{}}
+
+%% Subsubsub Section
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{0ex}%
+    {-3.25ex plus -1ex minus -0.2ex}%
+    {1.5ex plus 0.2ex}%
+    {\normalfont\normalsize\bfseries}}
+\makeatother
+\stepcounter{secnumdepth}
+\stepcounter{tocdepth}
 
 %Seitennummerierung neu beginnen, Zahlen [arabic], röm.Zahlen [roman,Roman], Buchstaben [alph,Alph]
 \pagenumbering{Roman}
