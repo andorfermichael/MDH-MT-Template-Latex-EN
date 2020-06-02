@@ -109,6 +109,99 @@ Now lets take a look at Listing~\ref{lst:test}.
 
 For the fast generation of tables from Excel use \url{http://www.heise.de/download/excel2latex.html}
 
+\begin{table}[ht!]
+    \centering
+    \caption[A table with multiline columns]{A table with multiline columns.}
+    \begin{tabularx}{\textwidth}{|c|X|l|}
+        \hline
+        \multicolumn{1}{|c|}{\textbf{PID}} & \textbf{Multiline}                                                                            & \textbf{Degree(s)}             \\ \hline
+        1                & Engineer's Degree in Healthcare IT                                                                   & Graduate Engineer (Dipl.-Ing.) \\ \hline
+        2               & Bachelor's Degree in Applied Mathematics, Master's Degree in Applied Informatics \& Data Science     & BSc, MSc                       \\ \hline
+    \end{tabularx}
+    \label{table:multiline-table}
+\end{table}
+
+\begin{landscape}
+    \begin{longtable}{|c|c|c|l|l|}
+        \caption[Multi-page Table]{Multi-page Table.} \label{table:multipage-table} \\
+        \hline
+        \multicolumn{5}{|c|}{\textbf{Participant 1 --- Evaluation Results}} \\ 
+        \hline
+        \textbf{Action} & \textbf{Task} & \textbf{Result} & \textbf{Reason} & \textbf{Proposed Solution} \\
+        \hline
+        \endfirsthead
+        \multicolumn{5}{c}%
+        {\tablename\ \thetable\ --- \textit{Continued from previous page}} \\
+        \hline
+        \multicolumn{5}{|c|}{\textbf{Participant 1 --- Evaluation Results}} \\ 
+        \hline
+        \textbf{Action} & \textbf{Task} & \textbf{Result} & \textbf{Reason} & \textbf{Proposed Solution} \\
+        \hline
+        \endhead
+        \hline \multicolumn{5}{|r|}{\textit{Continued on next page}} \\ \hline
+        \endfoot
+        \hline \hline
+        \endlastfoot
+        1               & 1                      & 0               & Lorem Ipsum dolor                                 &                                           \\ \hline
+        1               & 2                      & 1               &                                                       &                                           \\ \hline
+        1               & 3                      & 0               &                                                       &                                           \\ \hline
+        1               & 4                      & 1               &                                                       &                                           \\ \hline
+        2               & 1                      & 1               &                                                       &                                           \\ \hline
+        2               & 2                      & 0               &                                                       &                                           \\ \hline
+        2               & 3                      & 1               &                                                       &                                           \\ \hline
+        2               & 4                      & 1               &                                                       &                                           \\ \hline
+        3               & 1                      & 1               & Lorem Ipsum dolor                           &                                           \\ \hline
+        3               & 2                      & 1               &                                                       &                                           \\ \hline
+        3               & 3                      & 1               &                                                       &                                           \\ \hline
+        3               & 4                      & 0               &                                                       &                                           \\ \hline
+        4               & 1                      & 1               & Lorem Ipsum dolor                                      &                                           \\ \hline
+        4               & 2                      & 0               &                                                       &                                           \\ \hline
+        4               & 3                      & 1               &                                                       &                                           \\ \hline
+        4               & 4                      & 1               &                                                       &                                           \\ \hline
+        5               & 1                      & 1               & Lorem Ipsum dolor                       & Lorem Ipsum dolor sit amet        \\ \hline
+        5               & 2                      & 1               &                                                       &                                           \\ \hline
+        5               & 3                      & 1               & Lorem Ipsum dolor                       & Lorem Ipsum dolor         \\ \hline
+        5               & 4                      & 1               &                                                       &                                           \\ \hline
+        6               & 1                      & 1               &                                                       &                                           \\ \hline
+        6               & 2                      & 1               &                                                       &                                           \\ \hline
+        6               & 3                      & 1               &                                                       &                                           \\ \hline
+        6               & 4                      & 1               &                                                       &                                           \\ \hline
+        7               & 1                      & 1               &                                                       &                                           \\ \hline
+        7               & 2                      & 1               &                                                       &                                           \\ \hline
+        7               & 3                      & 1               &                                                       &                                           \\ \hline
+        7               & 4                      & 1               &                                                       &                                           \\ \hline
+        8               & 1                      & 0               & Lorem Ipsum dolor     & Lorem Ipsum dolor                \\ \hline
+        8               & 2                      & 0               &                                                       &                                           \\ \hline
+        8               & 3                      & 0               & Lorem Ipsum dolor                  & Lorem Ipsum dolor                        \\ \hline
+        8               & 4                      & 1               &                                                       &                                           \\ \hline
+        9               & 1                      & 1               &                                                       &                                           \\ \hline
+        9               & 2                      & 0               &                                                       &                                           \\ \hline
+        9               & 3                      & 1               &                                                       &                                           \\ \hline
+        9               & 4                      & 0               &                                                       &                                           \\ \hline
+        10              & 1                      & 1               &                                                       &                                           \\ \hline
+        10              & 2                      & 0              &                                                       &                                           \\ \hline
+        10              & 3                      & 1               &                                                       &                                           \\ \hline
+        10              & 4                      & 1               &                                                       &                                           \\ \hline
+        11              & 1                      & 0               & Lorem Ipsum dolor sit amet no sea takimata sanctus   & \\ \hline
+        11              & 2                      & 1               & Lorem Ipsum dolor sit amet no sea takimata sanctus                          & Lorem Ipsum dolor sit amet no sea takimata sanctus \\ \hline
+        11              & 3                      & 1               &                                                       &                                           \\ \hline
+        11              & 4                      & 1               &                                                       &                                           \\ \hline
+        12              & 1                      & 1               &                                                       &                                           \\ \hline
+        12              & 2                      & 1               &                                                       &                                           \\ \hline
+        12              & 3                      & 1               &                                                       &                                           \\ \hline
+        12              & 4                      & 1               &                                                       &                                           \\ \hline
+        13              & 1                      & 1               &                                                       &                                           \\ \hline
+        13              & 2                      & 1               &                                                       &                                           \\ \hline
+        13              & 3                      & 1               &                                                       &                                           \\ \hline
+        13              & 4                      & 1               &                                                       &                                           \\ \hline
+        14              & 1                      & 0               & Lorem Ipsum dolor sit amet no sea takimata sanctus & Lorem Ipsum dolor sit amet no sea takimata sanctus   \\ \hline
+        14              & 2                      & 1               &                                                       &                                           \\ \hline
+        14              & 3                      & 0              &                                                       &                                           \\ \hline
+        14              & 4                      & 1               &                                                       &                                           \\ \hline
+    \end{longtable}
+\end{landscape}
+
+
 \section{Equations}
 
 \LaTeX{} is great at typesetting equations. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
