@@ -15,7 +15,7 @@ All notable changes to this project will be documented below.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## 2020-03-01 ([M. Andorfer](https://github.com/andorfermichael))
+## 2020-06-02 ([M. Andorfer](https://github.com/andorfermichael))
 ### Added
 - Tables:
   - added packages and examples for multi-column and multi-page tables
@@ -33,13 +33,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
   - fixed romanian count to be consistent
   - fixed arabic count to be reversed (left, right)
   - fixed header for main chapters
-
-
-
-%   - added preface and dedication:
-%       - added examples for feature and dedication
-%   - added listing configuration:
-%       - added configuration for C#
 
 ## 2020-03-05 ([M. Andorfer](https://github.com/andorfermichael))
 ### Added
