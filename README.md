@@ -2,7 +2,7 @@
 
 This is the Master Thesis Template for the Master Degree Programme Digital Healthcare at St. Pölten University of Applied Sciences.
 
-It was orginally created by [P. Lechner](https://github.com/hrtlacek) as [St. Pölten UAS Master Thesis Template](https://github.com/hrtlacek/ThesisTemplate-FH-StP) in 2015.  
+It was originally created by [P. Lechner](https://github.com/hrtlacek) as [St. Pölten UAS Master Thesis Template](https://github.com/hrtlacek/ThesisTemplate-FH-StP) in 2015.  
 
 In 2016, it was adapted by M. Wagner and K. Blumenstein to fit the needs of the St. Pölten UAS IC\M/T - Institute of Creative\Media/Technologies.
 
